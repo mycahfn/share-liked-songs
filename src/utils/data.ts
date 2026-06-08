@@ -90,9 +90,9 @@ const addTrackPlaylist = async (playlist_id: string, uris: string[][], total: nu
 
 }
 
-export const generatePlaylist = async (user_id: string) => {
+export const generatePlaylist = async () => {
     const { uris, total } = await retrieveLikedSongs();
-    const newPlaylist = await createPlaylist(user_id);
+    const newPlaylist = await createPlaylist();
 
     await addTrackPlaylist(newPlaylist.id, uris, total)
 
