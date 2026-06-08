@@ -63,6 +63,7 @@ export const createPlaylist = async (user: string) => {
         onSuccess: () => toast.success("Created a new playlist."),
     });
     
+    console.log(data)
 
     return data;
 };
