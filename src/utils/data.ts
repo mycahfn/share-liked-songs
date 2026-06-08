@@ -62,6 +62,8 @@ export const createPlaylist = async (user: string) => {
         onError: () => toast.error("Error: Couldn't create a new playlist"),
         onSuccess: () => toast.success("Created a new playlist."),
     });
+    
+    console.log(data)
 
     return data;
 };
