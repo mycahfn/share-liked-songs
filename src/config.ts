@@ -8,7 +8,7 @@ export const endpoints = {
     access_token: "https://accounts.spotify.com/api/token",
     user_data: "https://api.spotify.com/v1/me",
     getCurrentSavedTracks: "https://api.spotify.com/v1/me/tracks?limit=50",
-    createPlaylist: (user_id:string) => `https://api.spotify.com/v1/users/${user_id}/playlists`,
+    createPlaylist: `https://api.spotify.com/v1/me/playlists`,
     addTrackPlaylist: (playlist_id:string) => `https://api.spotify.com/v1/playlists/${playlist_id}/tracks`,
     playlistCover: (playlist_id:string) => `https://api.spotify.com/v1/playlists/${playlist_id}/images`
 };

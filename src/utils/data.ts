@@ -40,10 +40,9 @@ const retrieveLikedSongs = async () => {
     return { uris, total }
 }
 
-export const createPlaylist = async (user: string) => {
-    const endpoint = `https://api.spotify.com/v1/users/${user}/playlists`;
+export const createPlaylist = async () => {
+    const endpoint = `https://api.spotify.com/v1/me/playlists`;
     const headers = {
-        Authorization: `Bearer ${Token.access_token}`,
         "Content-Type": "application/json",
     };
 
@@ -53,8 +52,7 @@ export const createPlaylist = async (user: string) => {
         collaborative: false,
         description: ""
     };
-
-    console.log(headers)
+    
 
     const data = await api({
         endpoint,
