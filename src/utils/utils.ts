@@ -9,7 +9,6 @@ interface props {
 
 export const api = async ({ endpoint, method = 'GET', headers, body, onError, onSuccess }: props) => {
     const response = await fetch(endpoint, { method, headers, body });
-    console.log(response)
 
     if (!response.ok) {
         onError?.();

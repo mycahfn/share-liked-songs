@@ -54,6 +54,8 @@ export const createPlaylist = async (user: string) => {
         description: ""
     };
 
+    console.log(headers)
+
     const data = await api({
         endpoint,
         method: "POST",
@@ -63,8 +65,6 @@ export const createPlaylist = async (user: string) => {
         onSuccess: () => toast.success("Created a new playlist."),
     });
     
-    console.log(data)
-
     return data;
 };
 
