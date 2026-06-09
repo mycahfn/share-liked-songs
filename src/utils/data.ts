@@ -40,8 +40,8 @@ const retrieveLikedSongs = async () => {
     return { uris, total }
 }
 
-export const createPlaylist = async (user: string) => {
-    const endpoint = `https://api.spotify.com/v1/users/${user}/playlists`;
+export const createPlaylist = async () => {
+    const endpoint = "https://api.spotify.com/v1/me/playlists";
     const headers = {
         Authorization: `Bearer ${Token.access_token}`,
         "Content-Type": "application/json",
@@ -59,7 +59,7 @@ export const createPlaylist = async (user: string) => {
         method: "POST",
         headers,
         body: JSON.stringify(body),
-        onError: () => toast.error("Error: Couldn't create a new playlist"),
+        onError: () => toast.error("Error: Couldn't create a new playlist", data),
         onSuccess: () => toast.success("Created a new playlist."),
     });
 
@@ -90,9 +90,9 @@ const addTrackPlaylist = async (playlist_id: string, uris: string[][], total: nu
 
 }
 
-export const generatePlaylist = async (user_id: string) => {
+export const generatePlaylist = async () => {
     const { uris, total } = await retrieveLikedSongs();
-    const newPlaylist = await createPlaylist(user_id);
+    const newPlaylist = await createPlaylist();
 
     await addTrackPlaylist(newPlaylist.id, uris, total)
 

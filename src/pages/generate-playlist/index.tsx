@@ -1,19 +1,16 @@
 import { useState } from "react";
-import { useNavigate, useOutletContext } from "react-router";
+import { useNavigate } from "react-router";
 import { Button, Heart, Loader } from "../../components";
 import { generatePlaylist } from "../../utils/data";
-
-import { ContextUser } from "../../interface/user";
 
 const GeneratePlaylistPage = () => {
     const [isFetching, setFetching] = useState(false)
     const navigate = useNavigate()
-    const { user } = useOutletContext<ContextUser>();
 
     async function handleChange() {
         setFetching(true)
 
-        const playlist_id = await generatePlaylist(user.id)
+        const playlist_id = await generatePlaylist()
 
         navigate("/view", { state: { playlist_id } });
     }
