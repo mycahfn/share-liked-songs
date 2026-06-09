@@ -1,6 +1,8 @@
 # Share Liked Songs Spotify Playlist
 Share Your Liked Songs on spotify
 
+NOTE 09/08/2026 We are currently experiencing issues with the request limit on the free version of the Spotify API, so the app may not work properly.
+
 ### This App is Based on:
 
 [Share Liked Songs](https://github.com/sometimesdigital/share-liked-songs)
