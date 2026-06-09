@@ -1,7 +1,7 @@
 export const scope = "user-read-private user-read-email user-library-read playlist-modify-public playlist-modify-private";
 
 export const client_id = "1869f0a2fda24e64977799a8b3a12c16";
-export const redirect_uri = import.meta.env.VITE_REDIRECT_URI
+export const redirect_uri = !import.meta.env.VITE_PRODUCTION_MODE ? "https://mycahfn.github.io/share-liked-songs/" : "http://127.0.0.1:5173/share-liked-songs/"
 
 export const endpoints = {
     authorize: "https://accounts.spotify.com/authorize",
