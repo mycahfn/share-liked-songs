@@ -41,10 +41,8 @@ const retrieveLikedSongs = async () => {
 }
 
 export const createPlaylist = async () => {
-    const endpoint = "https://api.spotify.com/v1/me/playlists";
-    const headers = {
-        "Content-Type": "application/json",
-    };
+    const endpoint = `https://api.spotify.com/v1/me/playlists`;
+    const headers = { Authorization: `Bearer ${Token.access_token}`, 'Content-Type': 'application/json' }
 
     const body = {
         name: "Liked Songs",
@@ -59,7 +57,7 @@ export const createPlaylist = async () => {
         method: "POST",
         headers,
         body: JSON.stringify(body),
-        onError: () => toast.error("Error: Couldn't create a new playlist", data),
+        onError: () => toast.error("Error: Couldn't create a new playlist"),
         onSuccess: () => toast.success("Created a new playlist."),
     });
     
