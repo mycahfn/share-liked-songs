@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { Button, Heart, Loader } from "../../components";
+import { Button, Heart, Loader} from "../../components";
 import { generatePlaylist } from "../../utils/data";
 
-import { RecordIcon } from "../../components/Icons/RecordIcon";
 import { ArrowRightIcon } from "../../components/Icons/ArrowRightIcon";
+import { RecordIcon } from "../../components/Icons/RecordIcon";
 
 const GeneratePlaylistPage = () => {
     const [isFetching, setFetching] = useState(false)
